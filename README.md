@@ -1,6 +1,6 @@
 # How to build a CRUD app using Flask
 
-Flask is one of the most popular web frameworks written in Python. Flask is a lightweight framework that is perfect for beginners. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
+[Flask](https://flask.palletsprojects.com/) is one of the most popular web frameworks written in Python. Flask is a lightweight framework that is perfect for beginners. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
 
 ## Background
 
@@ -94,7 +94,7 @@ We want to remember our tasks, so we'll want to be able to add items to a databa
 
 ### Configuring database connection
 
-Now We need to set up a database, open a connection to it, and associate this connection with our web application.
+Now we need to set up a database, open a connection to it, and associate this connection with our web application.
 
 Open `flask_todo_app/app.py` in code editor and add the following lines of code before the first function definition:
 
@@ -160,7 +160,7 @@ def get_tasks():
 
 ## Create template
 
-Now we need template to render each of the tasks as HTML by using a Jinja for loop. For this, create a folder named `templates` in the root folder of your project. Now create the `templates/base.html` file in this folder and add code as follows:
+Now we need template to render each of the tasks as HTML by using a [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) for loop. For this, create a folder named `templates` in the root folder of your project. Now create the `templates/base.html` file in this folder and add code as follows:
 
 ```html
 <!doctype html>
