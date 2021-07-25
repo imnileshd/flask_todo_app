@@ -11,7 +11,7 @@ db = SQLAlchemy(app)
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100))
-    completed = db.Column(db.Boolean)
+    completed = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return "<Title: {}>".format(self.title)
@@ -23,7 +23,7 @@ def say_hello():
 @app.route('/todos')
 def get_tasks():
     todos = Todo.query.all()
-    return render_template("base.html", todos=todos)
+    return render_template("todo.html", todos=todos)
 
 @app.route("/todos/create", methods=["POST"])
 def create():
@@ -48,5 +48,4 @@ def delete(id):
     return redirect(url_for("get_tasks"))
 
 if __name__ == "__main__":
-    db.create_all()
     app.run(debug=True)
