@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Todo App</h1>
+
+  <!-- Todo Input -->
+  <form action="/todos/create" method="POST">
+      <div>
+          <label>Title</label>
+          <input type="text" name="title" placeholder="Enter Todo...">
+          <br>
+          <button type="submit">Add</button>
+      </div>
+  </form>
+
+  <hr>
+
+  <!-- Todo List -->
+  {% for todo in todos %}
+      <p>{{ todo.title }}</p>
+
+      {% if todo.completed == False %}
+          <span>Incomplete</span>
+      {% else %}
+          <span>Complete</span>
+      {% endif %} 
+
+      <a href="/todos/update/{{ todo.id }}">Edit</a>
+      <a href="/todos/delete/{{ todo.id }}">Delete</a>
+
+  {% endfor %}
+
+{% endblock %}
